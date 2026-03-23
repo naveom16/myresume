@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 1;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .job, .education, .skill-group {
+            margin-bottom: 25px;
+        }
+
+        .job-title, .degree {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .company, .school {
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .date {
+            color: #999;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            color: #555;
+            margin-left: 15px;
+            border-left: 3px solid #667eea;
+            padding-left: 15px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: #f0f0f0;
+            padding: 12px 15px;
+            border-radius: 5px;
+            color: #667eea;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .skill-item:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            background: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .contact-info {
+                gap: 15px;
+                font-size: 0.85em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Your Name</h1>
+            <p>Professional Title / Job Position</p>
+            <div class="contact-info">
+                <span>📞 +1 (555) 123-4567</span>
+                <a href="mailto:your@email.com">✉️ your@email.com</a>
+                <span>📍 City, Country</span>
+                <a href="https://linkedin.com">🔗 LinkedIn</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- About Section -->
+            <div class="section">
+                <div class="section-title">About Me</div>
+                <p>Write a brief summary about yourself here. Highlight your key achievements, skills, and what makes you unique as a professional.</p>
+            </div>
+
+            <!-- Experience Section -->
+            <div class="section">
+                <div class="section-title">Experience</div>
+                
+                <div class="job">
+                    <div class="job-title">Senior Developer</div>
+                    <div class="company">Tech Company Ltd</div>
+                    <div class="date">January 2022 - Present</div>
+                    <div class="description">
+                        • Led development of key features<br>
+                        • Managed a team of 5 developers<br>
+                        • Improved system performance by 40%
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-title">Junior Developer</div>
+                    <div class="company">StartUp Inc</div>
+                    <div class="date">June 2020 - December 2021</div>
+                    <div class="description">
+                        • Developed web applications<br>
+                        • Collaborated with cross-functional teams<br>
+                        • Fixed bugs and optimized code
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Section -->
+            <div class="section">
+                <div class="section-title">Education</div>
+                
+                <div class="education">
+                    <div class="degree">Bachelor of Science in Computer Science</div>
+                    <div class="school">University Name</div>
+                    <div class="date">Graduated 2020</div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="section">
+                <div class="section-title">Skills</div>
+                <div class="skills-grid">
+                    <div class="skill-item">HTML & CSS</div>
+                    <div class="skill-item">JavaScript</div>
+                    <div class="skill-item">React</div>
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">SQL</div>
+                    <div class="skill-item">Git</div>
+                    <div class="skill-item">Project Management</div>
+                    <div class="skill-item">Team Leadership</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2026 Your Name. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
