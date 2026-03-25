@@ -48,6 +48,22 @@
             margin-bottom: 15px;
         }
 
+        .profile-photo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            margin: 0 auto 15px auto;
+            display: block;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: translateY(-3px) scale(1.02);
+        }
+
         .contact-info {
             display: flex;
             justify-content: center;
@@ -115,6 +131,45 @@
             padding-left: 15px;
         }
 
+        .project-card {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            background: #f0f5ff;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        .project-content {
+            flex: 1;
+        }
+
+        .project-media {
+            flex: 0 0 250px;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #fff;
+            border: 2px solid #667eea;
+            height: 200px;
+        }
+
+        .project-gif {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-gif {
+            transform: scale(1.05);
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -135,6 +190,71 @@
             background: #667eea;
             color: white;
             transform: translateY(-2px);
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .certificate-item {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .certificate-item:hover {
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .certificate-label {
+            font-size: 1em;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .certificate-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 2px solid #667eea;
+        }
+
+        .language-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .language-item {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s;
+        }
+
+        .language-item:hover {
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            transform: translateX(5px);
+        }
+
+        .language-item strong {
+            color: #667eea;
+            font-size: 1.05em;
+        }
+
+        .language-item p {
+            margin-top: 8px;
+            color: #555;
+            font-size: 0.95em;
         }
 
         .footer {
@@ -162,20 +282,52 @@
             .skills-grid {
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             }
+
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certificate-image {
+                height: 200px;
+            }
+
+            .language-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .project-media {
+                flex: 1;
+                width: 100%;
+                height: 250px;
+            }
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('a').forEach(function (link) {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
         <!-- Header Section -->
         <div class="header">
-            <h1>Your Name</h1>
-            <p>Professional Title / Job Position</p>
+            <img src="Image/myprofile.jpg" alt="Portrait of Satchakan" class="profile-photo">
+            <h1>Satchakan Forpimai</h1>
+            <p>Satchakan Forpimai | Computer Science Student</p>
             <div class="contact-info">
-                <span>📞 +1 (555) 123-4567</span>
-                <a href="mailto:your@email.com">✉️ your@email.com</a>
-                <span>📍 City, Country</span>
-                <a href="https://linkedin.com">🔗 LinkedIn</a>
+                <span>📞 +66 63-489-0167</span>
+                <a href="mailto:Satchakan5@gmail.com">✉️ Satchakan5@gmail.com</a>
+                <span>📍 Nakhon Ratchasima, Thailand</span>
+                <a href="https://github.com/naveom16">🔗 GitHub</a>
             </div>
         </div>
 
@@ -184,32 +336,34 @@
             <!-- About Section -->
             <div class="section">
                 <div class="section-title">About Me</div>
-                <p>Write a brief summary about yourself here. Highlight your key achievements, skills, and what makes you unique as a professional.</p>
+                <p>Computer Science student (21 years old) at Nakhon Ratchasima Rajabhat University. Passionate about software and game development. Proficient in C#, Python, and SQL, with experience building projects using Unity and applying AI tools.</p>
+                
+                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
+                    <strong style="color: #764ba2;">Career Objective:</strong>
+                    <p style="margin-top: 8px;">Seeking to leverage my skills in C#, Python, and SQL to develop software from analysis and design to implementation, while continuously improving my abilities.</p>
+                </div>
             </div>
 
             <!-- Experience Section -->
             <div class="section">
-                <div class="section-title">Experience</div>
+                <div class="section-title">Projects</div>
                 
-                <div class="job">
-                    <div class="job-title">Senior Developer</div>
-                    <div class="company">Tech Company Ltd</div>
-                    <div class="date">January 2022 - Present</div>
-                    <div class="description">
-                        • Led development of key features<br>
-                        • Managed a team of 5 developers<br>
-                        • Improved system performance by 40%
+                <div class="job project-card">
+                    <div class="project-content">
+                        <div class="job-title">Grimmore Tower Defense</div>
+                        <div class="company">Game Development Project (Capstone)</div>
+                        <div class="date">2024 - 2025</div>
+                        <div class="description">
+                            • Developed a Tower Defense game using Unity and C#<br>
+                            • Designed and built a data-driven architecture for game systems<br>
+                            • Utilized ScriptableObjects for flexible system configuration<br>
+                            • Implemented game data management and UI systems
+                        </div>
                     </div>
-                </div>
-
-                <div class="job">
-                    <div class="job-title">Junior Developer</div>
-                    <div class="company">StartUp Inc</div>
-                    <div class="date">June 2020 - December 2021</div>
-                    <div class="description">
-                        • Developed web applications<br>
-                        • Collaborated with cross-functional teams<br>
-                        • Fixed bugs and optimized code
+                    <div class="project-media">
+                        <a href="https://naveom16.itch.io/testgame3?secret=rlLyTfbXnEuZTeIsYUsKxal0" target="_blank" rel="noopener noreferrer">
+                            <img src="Image/game_preview.png" alt="Grimmore Tower Defense Demo" class="project-gif">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -220,8 +374,29 @@
                 
                 <div class="education">
                     <div class="degree">Bachelor of Science in Computer Science</div>
-                    <div class="school">University Name</div>
-                    <div class="date">Graduated 2020</div>
+                    <div class="school">Nakhon Ratchasima Rajabhat University</div>
+                    <div class="date">2022 - Present | GPA: 3.20</div>
+                </div>
+
+                <div class="education" style="margin-top: 15px;">
+                    <div class="degree">Vocational High School</div>
+                    <div class="school">Sikhiu Sawatphadungwitthaya School</div>
+                    <div class="date">2016 - 2021 | GPA: 2.88</div>
+                </div>
+            </div>
+
+            <!-- Certificates Section -->
+            <div class="section">
+                <div class="section-title">Certificates</div>
+                <div class="certificates-grid">
+                    <div class="certificate-item">
+                        <div class="certificate-label">GitHub Copilot Certificate (TH)</div>
+                        <img src="Image/githubCopilot_TH.jpg" alt="GitHub Copilot Certificate TH" class="certificate-image">
+                    </div>
+                    <div class="certificate-item">
+                        <div class="certificate-label">Azure Container Apps Certificate (TH)</div>
+                        <img src="Image/azure_con_TH.jpg" alt="Azure Container Apps Certificate TH" class="certificate-image">
+                    </div>
                 </div>
             </div>
 
@@ -229,21 +404,54 @@
             <div class="section">
                 <div class="section-title">Skills</div>
                 <div class="skills-grid">
-                    <div class="skill-item">HTML & CSS</div>
-                    <div class="skill-item">JavaScript</div>
-                    <div class="skill-item">React</div>
+                    <div class="skill-item">C#</div>
                     <div class="skill-item">Python</div>
                     <div class="skill-item">SQL</div>
-                    <div class="skill-item">Git</div>
-                    <div class="skill-item">Project Management</div>
-                    <div class="skill-item">Team Leadership</div>
+                    <div class="skill-item">Unity</div>
+                    <div class="skill-item">YOLOv8</div>
+                    <div class="skill-item">Oracle Database</div>
+                    <div class="skill-item">Microsoft SQL Server</div>
+                    <div class="skill-item">Adobe Photoshop</div>
+                    <div class="skill-item">Microsoft Visio</div>
+                    <div class="skill-item">ChatGPT / Gemini</div>
+                    <div class="skill-item">Windows 11</div>
+                </div>
+            </div>
+
+            <!-- Language Skills Section -->
+            <div class="section">
+                <div class="section-title">Language Skills</div>
+                <div class="language-grid">
+                    <div class="language-item">
+                        <strong>Thai</strong>
+                        <p>Speaking / Reading / Writing - Good</p>
+                    </div>
+                    <div class="language-item">
+                        <strong>English</strong>
+                        <p>Speaking / Reading / Writing - Good</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Skills Section -->
+            <div class="section">
+                <div class="section-title">Additional Info</div>
+                <div class="language-grid">
+                    <div class="language-item">
+                        <strong>Thai Typing Speed</strong>
+                        <p>40 words per minute</p>
+                    </div>
+                    <div class="language-item">
+                        <strong>English Typing Speed</strong>
+                        <p>30 words per minute</p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Footer -->
         <div class="footer">
-            <p>&copy; 2026 Your Name. All rights reserved.</p>
+            <p>&copy; 2025 Satchakan Forpimai. All rights reserved.</p>
         </div>
     </div>
 </body>
